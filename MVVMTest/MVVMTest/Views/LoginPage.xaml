@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:MVVMTest.Behaviors"
+             x:Class="MVVMTest.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+
+            <Label   Margin="0,0,0,-10"	Text="{Binding UserName.Errors}" TextColor="Red"/>
+            <Entry Text="{Binding UserName.Value, Mode=TwoWay}" x:Name="txtUserName">
+                <Entry.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateUserNameCommand}" />
+                </Entry.Behaviors>
+            </Entry>
+
+            <Label   Margin="0,0,0,-10"	Text="{Binding Password.Errors}" TextColor="Red"/>
+            <Entry Text="{Binding Password.Value, Mode=TwoWay}" IsPassword="True">
+                <Entry.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidatePasswordCommand}" />
+                </Entry.Behaviors>
+            </Entry>
+            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
