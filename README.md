@@ -1,7 +1,7 @@
 # MVVMTest
 
-Xamarin.Forms Xaminals
-Using Flyout for Menu
-Using Behaviour for Validation
-Using Uri and Route.Registration for Naviagetion
+Xamarin.Forms Xaminals </br>
+Using Flyout for Menu </br>
+Using Behaviour for Validation </br>
+Using Uri and Route.Registration for Naviagetion </br>
 Using PclStorage for Sotrage Data
